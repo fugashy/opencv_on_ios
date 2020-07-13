@@ -7,10 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
+// Objective-C++とやらで書く
+// なれないなぁ
+
 @interface OpenCVWrapper : NSObject
+
+// - : インスタンスメソッド(+ ならクラスメソッド)
+
+- (UIImage*) toGray: (UIImage*) img;
 
 @end
 

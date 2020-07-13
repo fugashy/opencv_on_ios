@@ -16,7 +16,7 @@
 		69D65CDD24BB3ECB00608AF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69D65CDB24BB3ECB00608AF4 /* LaunchScreen.storyboard */; };
 		69D65CE824BB3ECB00608AF4 /* opencv_on_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D65CE724BB3ECB00608AF4 /* opencv_on_iosTests.swift */; };
 		69D65CF324BB3ECC00608AF4 /* opencv_on_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D65CF224BB3ECC00608AF4 /* opencv_on_iosUITests.swift */; };
-		69DC0F0124BC06DF00CB7C54 /* OpenCVWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DC0F0024BC06DF00CB7C54 /* OpenCVWrapper.m */; };
+		69DC0F0124BC06DF00CB7C54 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 69DC0F0024BC06DF00CB7C54 /* OpenCVWrapper.mm */; };
 		9535723D5CE2D8EAE15933F5 /* Pods_opencv_on_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ABB8FEB1537E919ADFB1C29 /* Pods_opencv_on_ios.framework */; };
 		CC4F1DBE17801026A695F990 /* Pods_opencv_on_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 971F20B39DB68A568B7E1F4E /* Pods_opencv_on_iosTests.framework */; };
 /* End PBXBuildFile section */
@@ -60,7 +60,7 @@
 		69D65CF424BB3ECC00608AF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69DC0EFE24BC06DF00CB7C54 /* opencv_on_ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "opencv_on_ios-Bridging-Header.h"; sourceTree = "<group>"; };
 		69DC0EFF24BC06DF00CB7C54 /* OpenCVWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
-		69DC0F0024BC06DF00CB7C54 /* OpenCVWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenCVWrapper.m; sourceTree = "<group>"; };
+		69DC0F0024BC06DF00CB7C54 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
 		81FD992B52ED1E0DE8FCB556 /* Pods-opencv_on_iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-opencv_on_iosTests.release.xcconfig"; path = "Target Support Files/Pods-opencv_on_iosTests/Pods-opencv_on_iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		971F20B39DB68A568B7E1F4E /* Pods_opencv_on_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_opencv_on_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A46035D34C9E35850F7763FA /* Pods-opencv_on_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-opencv_on_ios.debug.xcconfig"; path = "Target Support Files/Pods-opencv_on_ios/Pods-opencv_on_ios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +118,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		69B53C5224BC0C3A0047D3F9 /* Wrapper */ = {
+			isa = PBXGroup;
+			children = (
+				69DC0F0024BC06DF00CB7C54 /* OpenCVWrapper.mm */,
+				69DC0EFF24BC06DF00CB7C54 /* OpenCVWrapper.h */,
+			);
+			path = Wrapper;
+			sourceTree = "<group>";
+		};
 		69D65CC424BB3ECA00608AF4 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +152,7 @@
 		69D65CCF24BB3ECA00608AF4 /* opencv_on_ios */ = {
 			isa = PBXGroup;
 			children = (
+				69B53C5224BC0C3A0047D3F9 /* Wrapper */,
 				69D65CD024BB3ECA00608AF4 /* AppDelegate.swift */,
 				69D65CD224BB3ECA00608AF4 /* SceneDelegate.swift */,
 				69D65CD424BB3ECA00608AF4 /* ContentView.swift */,
@@ -150,8 +160,6 @@
 				69D65CDB24BB3ECB00608AF4 /* LaunchScreen.storyboard */,
 				69D65CDE24BB3ECB00608AF4 /* Info.plist */,
 				69D65CD824BB3ECB00608AF4 /* Preview Content */,
-				69DC0EFF24BC06DF00CB7C54 /* OpenCVWrapper.h */,
-				69DC0F0024BC06DF00CB7C54 /* OpenCVWrapper.m */,
 				69DC0EFE24BC06DF00CB7C54 /* opencv_on_ios-Bridging-Header.h */,
 			);
 			path = opencv_on_ios;
@@ -389,7 +397,7 @@
 			files = (
 				69D65CD124BB3ECA00608AF4 /* AppDelegate.swift in Sources */,
 				69D65CD324BB3ECA00608AF4 /* SceneDelegate.swift in Sources */,
-				69DC0F0124BC06DF00CB7C54 /* OpenCVWrapper.m in Sources */,
+				69DC0F0124BC06DF00CB7C54 /* OpenCVWrapper.mm in Sources */,
 				69D65CD524BB3ECA00608AF4 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
