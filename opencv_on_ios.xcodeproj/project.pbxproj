@@ -16,6 +16,7 @@
 		69D65CDD24BB3ECB00608AF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69D65CDB24BB3ECB00608AF4 /* LaunchScreen.storyboard */; };
 		69D65CE824BB3ECB00608AF4 /* opencv_on_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D65CE724BB3ECB00608AF4 /* opencv_on_iosTests.swift */; };
 		69D65CF324BB3ECC00608AF4 /* opencv_on_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D65CF224BB3ECC00608AF4 /* opencv_on_iosUITests.swift */; };
+		69DC0F0124BC06DF00CB7C54 /* OpenCVWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 69DC0F0024BC06DF00CB7C54 /* OpenCVWrapper.m */; };
 		9535723D5CE2D8EAE15933F5 /* Pods_opencv_on_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ABB8FEB1537E919ADFB1C29 /* Pods_opencv_on_ios.framework */; };
 		CC4F1DBE17801026A695F990 /* Pods_opencv_on_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 971F20B39DB68A568B7E1F4E /* Pods_opencv_on_iosTests.framework */; };
 /* End PBXBuildFile section */
@@ -57,6 +58,9 @@
 		69D65CEE24BB3ECB00608AF4 /* opencv_on_iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = opencv_on_iosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69D65CF224BB3ECC00608AF4 /* opencv_on_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = opencv_on_iosUITests.swift; sourceTree = "<group>"; };
 		69D65CF424BB3ECC00608AF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69DC0EFE24BC06DF00CB7C54 /* opencv_on_ios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "opencv_on_ios-Bridging-Header.h"; sourceTree = "<group>"; };
+		69DC0EFF24BC06DF00CB7C54 /* OpenCVWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
+		69DC0F0024BC06DF00CB7C54 /* OpenCVWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenCVWrapper.m; sourceTree = "<group>"; };
 		81FD992B52ED1E0DE8FCB556 /* Pods-opencv_on_iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-opencv_on_iosTests.release.xcconfig"; path = "Target Support Files/Pods-opencv_on_iosTests/Pods-opencv_on_iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		971F20B39DB68A568B7E1F4E /* Pods_opencv_on_iosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_opencv_on_iosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A46035D34C9E35850F7763FA /* Pods-opencv_on_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-opencv_on_ios.debug.xcconfig"; path = "Target Support Files/Pods-opencv_on_ios/Pods-opencv_on_ios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -101,7 +105,6 @@
 				03ED1F0056DEE0B332FB7A53 /* Pods-opencv_on_iosTests.debug.xcconfig */,
 				81FD992B52ED1E0DE8FCB556 /* Pods-opencv_on_iosTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -147,6 +150,9 @@
 				69D65CDB24BB3ECB00608AF4 /* LaunchScreen.storyboard */,
 				69D65CDE24BB3ECB00608AF4 /* Info.plist */,
 				69D65CD824BB3ECB00608AF4 /* Preview Content */,
+				69DC0EFF24BC06DF00CB7C54 /* OpenCVWrapper.h */,
+				69DC0F0024BC06DF00CB7C54 /* OpenCVWrapper.m */,
+				69DC0EFE24BC06DF00CB7C54 /* opencv_on_ios-Bridging-Header.h */,
 			);
 			path = opencv_on_ios;
 			sourceTree = "<group>";
@@ -248,6 +254,7 @@
 				TargetAttributes = {
 					69D65CCC24BB3ECA00608AF4 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 					69D65CE224BB3ECB00608AF4 = {
 						CreatedOnToolsVersion = 11.5;
@@ -382,6 +389,7 @@
 			files = (
 				69D65CD124BB3ECA00608AF4 /* AppDelegate.swift in Sources */,
 				69D65CD324BB3ECA00608AF4 /* SceneDelegate.swift in Sources */,
+				69DC0F0124BC06DF00CB7C54 /* OpenCVWrapper.m in Sources */,
 				69D65CD524BB3ECA00608AF4 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,6 +556,7 @@
 			baseConfigurationReference = A46035D34C9E35850F7763FA /* Pods-opencv_on_ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"opencv_on_ios/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
@@ -558,6 +567,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "fugashy.opencv-on-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "opencv_on_ios/opencv_on_ios-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -568,6 +579,7 @@
 			baseConfigurationReference = B46FCFADCC074F7CFCB85A03 /* Pods-opencv_on_ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"opencv_on_ios/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
@@ -578,6 +590,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "fugashy.opencv-on-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "opencv_on_ios/opencv_on_ios-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
