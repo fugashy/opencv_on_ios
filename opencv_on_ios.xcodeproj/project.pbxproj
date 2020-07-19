@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		25B742911F0C2FBF2AFECFF0 /* Pods_opencv_on_ios_opencv_on_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 380947008C798DCCA882C5C9 /* Pods_opencv_on_ios_opencv_on_iosUITests.framework */; };
+		69656A8C24C3F707004D3AD4 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69656A8B24C3F707004D3AD4 /* CameraViewModel.swift */; };
+		69656A8E24C3FBF0004D3AD4 /* CALayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69656A8D24C3FBF0004D3AD4 /* CALayerView.swift */; };
 		69D65CD124BB3ECA00608AF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D65CD024BB3ECA00608AF4 /* AppDelegate.swift */; };
 		69D65CD324BB3ECA00608AF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D65CD224BB3ECA00608AF4 /* SceneDelegate.swift */; };
 		69D65CD524BB3ECA00608AF4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D65CD424BB3ECA00608AF4 /* ContentView.swift */; };
@@ -44,6 +46,8 @@
 		34D8C1E9A8D87311B815765A /* Pods-opencv_on_ios-opencv_on_iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-opencv_on_ios-opencv_on_iosUITests.debug.xcconfig"; path = "Target Support Files/Pods-opencv_on_ios-opencv_on_iosUITests/Pods-opencv_on_ios-opencv_on_iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		380947008C798DCCA882C5C9 /* Pods_opencv_on_ios_opencv_on_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_opencv_on_ios_opencv_on_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6474E576B63B30E70489A916 /* Pods-opencv_on_ios-opencv_on_iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-opencv_on_ios-opencv_on_iosUITests.release.xcconfig"; path = "Target Support Files/Pods-opencv_on_ios-opencv_on_iosUITests/Pods-opencv_on_ios-opencv_on_iosUITests.release.xcconfig"; sourceTree = "<group>"; };
+		69656A8B24C3F707004D3AD4 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+		69656A8D24C3FBF0004D3AD4 /* CALayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerView.swift; sourceTree = "<group>"; };
 		69D65CCD24BB3ECA00608AF4 /* opencv_on_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = opencv_on_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69D65CD024BB3ECA00608AF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69D65CD224BB3ECA00608AF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +122,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		69656A8A24C3F6BC004D3AD4 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				69656A8B24C3F707004D3AD4 /* CameraViewModel.swift */,
+				69656A8D24C3FBF0004D3AD4 /* CALayerView.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
 		69B53C5224BC0C3A0047D3F9 /* Wrapper */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +165,7 @@
 		69D65CCF24BB3ECA00608AF4 /* opencv_on_ios */ = {
 			isa = PBXGroup;
 			children = (
+				69656A8A24C3F6BC004D3AD4 /* Camera */,
 				69B53C5224BC0C3A0047D3F9 /* Wrapper */,
 				69D65CD024BB3ECA00608AF4 /* AppDelegate.swift */,
 				69D65CD224BB3ECA00608AF4 /* SceneDelegate.swift */,
@@ -398,6 +412,8 @@
 				69D65CD124BB3ECA00608AF4 /* AppDelegate.swift in Sources */,
 				69D65CD324BB3ECA00608AF4 /* SceneDelegate.swift in Sources */,
 				69DC0F0124BC06DF00CB7C54 /* OpenCVWrapper.mm in Sources */,
+				69656A8C24C3F707004D3AD4 /* CameraViewModel.swift in Sources */,
+				69656A8E24C3FBF0004D3AD4 /* CALayerView.swift in Sources */,
 				69D65CD524BB3ECA00608AF4 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -567,6 +583,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"opencv_on_ios/Preview Content\"";
+				DEVELOPMENT_TEAM = KA488366VT;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = opencv_on_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -590,6 +607,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"opencv_on_ios/Preview Content\"";
+				DEVELOPMENT_TEAM = KA488366VT;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = opencv_on_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
