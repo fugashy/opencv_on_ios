@@ -14,26 +14,22 @@ class CameraViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, O
 
     var previewLayer:CALayer!
 
-    private var _takePhoto:Bool = false
     private let captureSession = AVCaptureSession()
     private var capturepDevice:AVCaptureDevice!
 
     override init() {
         super.init()
-
         prepareCamera()
         beginSession()
-    }
-
-    func takePhoto() {
-        _takePhoto = true
     }
 
     private func prepareCamera() {
         captureSession.sessionPreset = .photo
 
         if let availableDevice = AVCaptureDevice.DiscoverySession(
-          deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back).devices.first {
+                deviceTypes: [.builtInWideAngleCamera],
+                mediaType: AVMediaType.video,
+                position: .back).devices.first {
             capturepDevice = availableDevice
         }
     }
@@ -41,7 +37,6 @@ class CameraViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, O
     private func beginSession() {
         do {
             let captureDeviceInput = try AVCaptureDeviceInput(device: capturepDevice)
-
             captureSession.addInput(captureDeviceInput)
         } catch {
             print(error.localizedDescription)
@@ -51,7 +46,8 @@ class CameraViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, O
         self.previewLayer = previewLayer
 
         let dataOutput = AVCaptureVideoDataOutput()
-        dataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String:kCVPixelFormatType_32BGRA]
+        dataOutput.videoSettings = [
+            kCVPixelBufferPixelFormatTypeKey as String:kCVPixelFormatType_32BGRA]
 
         if captureSession.canAddOutput(dataOutput) {
             captureSession.addOutput(dataOutput)
@@ -59,7 +55,8 @@ class CameraViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, O
 
         captureSession.commitConfiguration()
 
-        let queue = DispatchQueue(label: "FromF.github.com.AVFoundationSwiftUI.AVFoundation")
+        let queue = DispatchQueue(
+            label: "FromF.github.com.AVFoundationSwiftUI.AVFoundation")
         dataOutput.setSampleBufferDelegate(self, queue: queue)
     }
 
@@ -74,13 +71,14 @@ class CameraViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, O
     }
 
     // MARK: - AVCaptureVideoDataOutputSampleBufferDelegate
-    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        if _takePhoto {
-            _takePhoto = false
-            if let image = getImageFromSampleBuffer(buffer: sampleBuffer) {
-                DispatchQueue.main.async {
-                    self.image = image
-                }
+    func captureOutput(
+            _
+            output: AVCaptureOutput,
+            didOutput sampleBuffer: CMSampleBuffer,
+            from connection: AVCaptureConnection) {
+        if let image = getImageFromSampleBuffer(buffer: sampleBuffer) {
+            DispatchQueue.main.async {
+                self.image = image
             }
         }
     }
@@ -90,7 +88,10 @@ class CameraViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, O
             let ciImage = CIImage(cvPixelBuffer: pixelBuffer)
             let context = CIContext()
 
-            let imageRect = CGRect(x: 0, y: 0, width: CVPixelBufferGetWidth(pixelBuffer), height: CVPixelBufferGetHeight(pixelBuffer))
+            let imageRect = CGRect(
+                x: 0, y: 0,
+                width: CVPixelBufferGetWidth(pixelBuffer),
+                height: CVPixelBufferGetHeight(pixelBuffer))
 
             if let image = context.createCGImage(ciImage, from: imageRect) {
                 return UIImage(cgImage: image, scale: UIScreen.main.scale, orientation: .right)

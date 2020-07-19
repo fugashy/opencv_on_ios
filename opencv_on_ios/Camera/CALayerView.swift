@@ -9,7 +9,8 @@ import SwiftUI
 struct CALayerView: UIViewControllerRepresentable {
     var caLayer:CALayer
 
-    func makeUIViewController(context: UIViewControllerRepresentableContext<CALayerView>) -> UIViewController {
+    func makeUIViewController(
+            context: UIViewControllerRepresentableContext<CALayerView>) -> UIViewController {
         let viewController = UIViewController()
 
         viewController.view.layer.addSublayer(caLayer)
@@ -18,7 +19,9 @@ struct CALayerView: UIViewControllerRepresentable {
         return viewController
     }
 
-    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<CALayerView>) {
+    func updateUIViewController(
+            _ uiViewController: UIViewController,
+            context: UIViewControllerRepresentableContext<CALayerView>) {
         caLayer.frame = uiViewController.view.layer.frame
     }
 }
