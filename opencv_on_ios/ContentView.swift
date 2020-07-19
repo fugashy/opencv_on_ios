@@ -8,16 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject private var avFoundationVM = CameraViewModel()
-
     var body: some View {
         ZStack(alignment: .bottom) {
-            CALayerView(
-                caLayer: avFoundationVM.previewLayer)
-        }.onAppear {
-            self.avFoundationVM.startSession()
-        }.onDisappear {
-            self.avFoundationVM.endSession()
+            CameraView()
         }
     }
 }

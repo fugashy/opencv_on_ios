@@ -6,6 +6,21 @@
 
 import SwiftUI
 
+struct CameraView : View {
+    @ObservedObject private var cameraViewModel = CameraViewModel()
+
+    var body: some View {
+        ZStack(alignment: .bottom) {
+            CALayerView(
+                caLayer: cameraViewModel.previewLayer)
+        }.onAppear {
+            self.cameraViewModel.startSession()
+        }.onDisappear {
+            self.cameraViewModel.endSession()
+        }
+    }
+}
+
 struct CALayerView: UIViewControllerRepresentable {
     var caLayer:CALayer
 
@@ -20,7 +35,8 @@ struct CALayerView: UIViewControllerRepresentable {
     }
 
     func updateUIViewController(
-            _ uiViewController: UIViewController,
+            _
+            uiViewController: UIViewController,
             context: UIViewControllerRepresentableContext<CALayerView>) {
         caLayer.frame = uiViewController.view.layer.frame
     }
